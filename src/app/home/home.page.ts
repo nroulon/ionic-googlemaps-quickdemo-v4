@@ -44,6 +44,9 @@ export class HomePage implements OnInit {
         },
         zoom: 18,
         tilt: 30
+      },
+      controls: {
+        myLocation: true
       }
     });
 
@@ -70,11 +73,11 @@ export class HomePage implements OnInit {
       });
 
       // add a marker
+      const markerLatLng = {lat: location.latLng.lat - 0.0001, lng: location.latLng.lng};
       let marker: Marker = this.map.addMarkerSync({
         title: '@ionic-native/google-maps plugin!',
         snippet: 'This plugin is awesome!',
-        position: location.latLng,
-        animation: GoogleMapsAnimation.BOUNCE
+        position: markerLatLng
       });
 
       // show the infoWindow

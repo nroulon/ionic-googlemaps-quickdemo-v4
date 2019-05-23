@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "buildwww": "rm -rf www/ docs/; ionic cordova build browser --prod; cp src/404.html www/; cp platforms/browser/config.xml www/; mv www docs; grep -rl '(YOUR_API_KEY_IS_HERE)' ./docs/ | xargs sed -i '' 's/(YOUR_API_KEY_IS_HERE)/AIzaSyBZamoub9SCWL2GriEBRSgLGVVrF0QPakk/g'",
+    "buildwww": "rm -rf www/ docs/; ionic cordova build browser --prod; cp src/404.html www/; cp platforms/browser/config.xml www/; mv www docs; grep -rl 'AIzaSyDF8xuw-oJ8XcIr1hN-qnHQ0OezK-t3TUI' ./docs/ | xargs sed -i '' 's/AIzaSyBnZhx_rwHnWrlk1ikzCjurnIFns5DhFFQ/AIzaSyBZamoub9SCWL2GriEBRSgLGVVrF0QPakk/g'",
     "link": "bash bin/local_dev.sh"
   },
   "private": true,
@@ -31,7 +31,7 @@
     "cordova-browser": "6.0.0",
     "cordova-ios": "5.0.1",
     "cordova-plugin-device": "^2.0.2",
-    "cordova-plugin-googlemaps": "2.6.2",
+    "cordova-plugin-googlemaps": "^2.6.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "cordova-plugin-ionic-webview": "^4.0.1",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -75,9 +75,14 @@
       "cordova-plugin-statusbar": {},
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-googlemaps": {}
+      "cordova-plugin-googlemaps": {
+        "PLAY_SERVICES_VERSION": "15.0.1",
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
       "android",
